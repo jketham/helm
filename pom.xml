@@ -40,6 +40,18 @@
 					</image>
 				</configuration>
 			</plugin>
+			 <plugin>
+    <artifactId>maven-failsafe-plugin</artifactId>
+    <version>2.19.1</version>
+    <executions>
+      <execution>
+        <id>integration-test</id>
+        <goals>
+          <goal>integration-test</goal>
+        </goals>
+      </execution>
+    </executions>
+  </plugin>
 		</plugins>
 		<finalName>helm</finalName>
 	</build>
