@@ -31,27 +31,22 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<image>
-						<builder>paketobuildpacks/builder-jammy-base:latest</builder>
-					</image>
-				</configuration>
-			</plugin>
-			 <plugin>
-    <artifactId>maven-failsafe-plugin</artifactId>
-    <version>2.19.1</version>
-    <executions>
-      <execution>
-        <id>integration-test</id>
-        <goals>
-          <goal>integration-test</goal>
-        </goals>
-      </execution>
-    </executions>
-  </plugin>
+	<plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.3</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+        </plugins>		
 		</plugins>
 		<finalName>helm</finalName>
 	</build>
